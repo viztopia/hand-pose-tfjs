@@ -15,7 +15,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(600, 410);
+    createCanvas(600, 400);
     button = createButton('track hand');
     button.mousePressed(startTracking);
     imageToTrack = createCapture(VIDEO);
@@ -123,11 +123,11 @@ async function trackHand(imageToTrack) {
         for (let currnetJoint = 0; currnetJoint < jointNumber; currnetJoint++) {
             // console.log("heat map shape:");
             // console.log(lastHeatMap.shape);
-            let joint1_HM_3d = lastHeatMap.slice([0, 0, 0 + currnetJoint], [46, 46, 1]).clone();
+            const joint1_HM_3d = lastHeatMap.slice([0, 0, 0 + currnetJoint], [46, 46, 1]).clone();
             // console.log("joint1_3d:");
             // console.log(joint1_HM_3d);
 
-            let joint1_HM_2d = joint1_HM_3d.reshape([46, 46]);
+            const joint1_HM_2d = joint1_HM_3d.reshape([46, 46]);
             // console.log("joint1_2d:");
             // console.log(joint1_HM_2d);
 
@@ -147,7 +147,14 @@ async function trackHand(imageToTrack) {
                 handX[currnetJoint] = scaleUnitX * cordX;
                 handY[currnetJoint] = scaleUnitY * cordY;
             })
+
+            joint1_HM_3d.dispose();
+            joint1_HM_2d.dispose();
         }
+
+        // result.dispose();
+        lastHeatMap.dispose();
+
 
         trackHand(imageToTrack);
 
