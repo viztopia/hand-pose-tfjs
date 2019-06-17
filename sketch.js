@@ -15,7 +15,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(1000, 500);
+    createCanvas(600, 410);
     button = createButton('track hand');
     button.mousePressed(startTracking);
     imageToTrack = createCapture(VIDEO);
