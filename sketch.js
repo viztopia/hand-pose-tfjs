@@ -35,6 +35,8 @@ function draw() {
             noStroke();
             fill(232, 122, 19);
             ellipse(handX[i], handY[i], 10);
+            stroke(255, 170, 32);
+            text(i, handX[i] + 15, handY[i])
         }
     }
 
