@@ -8,3 +8,9 @@ Now working on performance improvement by rebuilding the model with MobileNet. H
 <p align="center">
     <img src="http://giphygifs.s3.amazonaws.com/media/2Yj11FvB4SVYFeglky/giphy.gif", width="480">
 </p>
+
+07/10/2019 Update:
+A python model not working very well can be downloaded here:
+[link](https://drive.google.com/open?id=1lH3ePmfRYZ2lVxCnVFYq5vOi4_3XutaW)
+
+Put it under models/ , and run demo_cpm_hand_dw.py for testing.

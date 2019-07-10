@@ -1,0 +1,4977 @@
+{
+  "format": "layers-model",
+  "generatedBy": "keras v2.2.4",
+  "convertedBy": "TensorFlow.js Converter v1.1.2",
+  "modelTopology": {
+    "keras_version": "2.2.4",
+    "backend": "tensorflow",
+    "model_config": {
+      "class_name": "Model",
+      "config": {
+        "name": "model_1",
+        "layers": [
+          {
+            "name": "input_1",
+            "class_name": "InputLayer",
+            "config": {
+              "batch_input_shape": [
+                null,
+                368,
+                368,
+                3
+              ],
+              "dtype": "float32",
+              "sparse": false,
+              "name": "input_1"
+            },
+            "inbound_nodes": []
+          },
+          {
+            "name": "sub_stages/sub_conv1",
+            "class_name": "Conv2D",
+            "config": {
+              "name": "sub_stages/sub_conv1",
+              "trainable": true,
+              "filters": 64,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "input_1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv2",
+            "class_name": "Conv2D",
+            "config": {
+              "name": "sub_stages/sub_conv2",
+              "trainable": true,
+              "filters": 64,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_pool1",
+            "class_name": "MaxPooling2D",
+            "config": {
+              "name": "sub_stages/sub_pool1",
+              "trainable": true,
+              "pool_size": [
+                2,
+                2
+              ],
+              "padding": "valid",
+              "strides": [
+                2,
+                2
+              ],
+              "data_format": "channels_last"
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv3",
+            "class_name": "Conv2D",
+            "config": {
+              "name": "sub_stages/sub_conv3",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_pool1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv4",
+            "class_name": "Conv2D",
+            "config": {
+              "name": "sub_stages/sub_conv4",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv3",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_pool2",
+            "class_name": "MaxPooling2D",
+            "config": {
+              "name": "sub_stages/sub_pool2",
+              "trainable": true,
+              "pool_size": [
+                2,
+                2
+              ],
+              "padding": "valid",
+              "strides": [
+                2,
+                2
+              ],
+              "data_format": "channels_last"
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv4",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv5",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv5",
+              "trainable": true,
+              "filters": 256,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_pool2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv6",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv6",
+              "trainable": true,
+              "filters": 256,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv5",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv7",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv7",
+              "trainable": true,
+              "filters": 256,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv6",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv8",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv8",
+              "trainable": true,
+              "filters": 256,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                2,
+                2
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv7",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv9",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv9",
+              "trainable": true,
+              "filters": 512,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv8",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv10",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv10",
+              "trainable": true,
+              "filters": 512,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv9",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv11",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv11",
+              "trainable": true,
+              "filters": 512,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv10",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv12",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv12",
+              "trainable": true,
+              "filters": 512,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv11",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv13",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv13",
+              "trainable": true,
+              "filters": 512,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv12",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_conv14",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_conv14",
+              "trainable": true,
+              "filters": 512,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv13",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sub_stages/sub_stage_img_feature",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "sub_stages/sub_stage_img_feature",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_conv14",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_1/conv1",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_1/conv1",
+              "trainable": true,
+              "filters": 512,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "sub_stages/sub_stage_img_feature",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_1/stage_heatmap",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_1/stage_heatmap",
+              "trainable": true,
+              "filters": 22,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_1/conv1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "concatenate_1",
+            "class_name": "Concatenate",
+            "config": {
+              "name": "concatenate_1",
+              "trainable": true,
+              "axis": 3
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_1/stage_heatmap",
+                  0,
+                  0,
+                  {}
+                ],
+                [
+                  "sub_stages/sub_stage_img_feature",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_2/mid_conv1",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_2/mid_conv1",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "concatenate_1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_2/mid_conv2",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_2/mid_conv2",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_2/mid_conv1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_2/mid_conv3",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_2/mid_conv3",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_2/mid_conv2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_2/mid_conv4",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_2/mid_conv4",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_2/mid_conv3",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_2/mid_conv5",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_2/mid_conv5",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_2/mid_conv4",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_2/mid_conv6",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_2/mid_conv6",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_2/mid_conv5",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_2/mid_conv7",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_2/mid_conv7",
+              "trainable": true,
+              "filters": 22,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_2/mid_conv6",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "concatenate_2",
+            "class_name": "Concatenate",
+            "config": {
+              "name": "concatenate_2",
+              "trainable": true,
+              "axis": 3
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_2/mid_conv7",
+                  0,
+                  0,
+                  {}
+                ],
+                [
+                  "sub_stages/sub_stage_img_feature",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_3/mid_conv1",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_3/mid_conv1",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "concatenate_2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_3/mid_conv2",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_3/mid_conv2",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_3/mid_conv1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_3/mid_conv3",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_3/mid_conv3",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_3/mid_conv2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_3/mid_conv4",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_3/mid_conv4",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_3/mid_conv3",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_3/mid_conv5",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_3/mid_conv5",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_3/mid_conv4",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_3/mid_conv6",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_3/mid_conv6",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_3/mid_conv5",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_3/mid_conv7",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_3/mid_conv7",
+              "trainable": true,
+              "filters": 22,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_3/mid_conv6",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "concatenate_3",
+            "class_name": "Concatenate",
+            "config": {
+              "name": "concatenate_3",
+              "trainable": true,
+              "axis": 3
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_3/mid_conv7",
+                  0,
+                  0,
+                  {}
+                ],
+                [
+                  "sub_stages/sub_stage_img_feature",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_4/mid_conv1",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_4/mid_conv1",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "concatenate_3",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_4/mid_conv2",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_4/mid_conv2",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_4/mid_conv1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_4/mid_conv3",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_4/mid_conv3",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_4/mid_conv2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_4/mid_conv4",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_4/mid_conv4",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_4/mid_conv3",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_4/mid_conv5",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_4/mid_conv5",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_4/mid_conv4",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_4/mid_conv6",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_4/mid_conv6",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_4/mid_conv5",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_4/mid_conv7",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_4/mid_conv7",
+              "trainable": true,
+              "filters": 22,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_4/mid_conv6",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "concatenate_4",
+            "class_name": "Concatenate",
+            "config": {
+              "name": "concatenate_4",
+              "trainable": true,
+              "axis": 3
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_4/mid_conv7",
+                  0,
+                  0,
+                  {}
+                ],
+                [
+                  "sub_stages/sub_stage_img_feature",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_5/mid_conv1",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_5/mid_conv1",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "concatenate_4",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_5/mid_conv2",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_5/mid_conv2",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_5/mid_conv1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_5/mid_conv3",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_5/mid_conv3",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_5/mid_conv2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_5/mid_conv4",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_5/mid_conv4",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_5/mid_conv3",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_5/mid_conv5",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_5/mid_conv5",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_5/mid_conv4",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_5/mid_conv6",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_5/mid_conv6",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_5/mid_conv5",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_5/mid_conv7",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_5/mid_conv7",
+              "trainable": true,
+              "filters": 22,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_5/mid_conv6",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "concatenate_5",
+            "class_name": "Concatenate",
+            "config": {
+              "name": "concatenate_5",
+              "trainable": true,
+              "axis": 3
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_5/mid_conv7",
+                  0,
+                  0,
+                  {}
+                ],
+                [
+                  "sub_stages/sub_stage_img_feature",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_6/mid_conv1",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_6/mid_conv1",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "concatenate_5",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_6/mid_conv2",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_6/mid_conv2",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_6/mid_conv1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_6/mid_conv3",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_6/mid_conv3",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_6/mid_conv2",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_6/mid_conv4",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_6/mid_conv4",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_6/mid_conv3",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_6/mid_conv5",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_6/mid_conv5",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                7,
+                7
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_6/mid_conv4",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_6/mid_conv6",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_6/mid_conv6",
+              "trainable": true,
+              "filters": 128,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_6/mid_conv5",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "stage_6/mid_conv7",
+            "class_name": "SeparableConv2D",
+            "config": {
+              "name": "stage_6/mid_conv7",
+              "trainable": true,
+              "filters": 22,
+              "kernel_size": [
+                1,
+                1
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "activation": "relu",
+              "use_bias": true,
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "bias_constraint": null,
+              "depth_multiplier": 1,
+              "depthwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "pointwise_initializer": {
+                "class_name": "VarianceScaling",
+                "config": {
+                  "scale": 1.0,
+                  "mode": "fan_avg",
+                  "distribution": "uniform",
+                  "seed": null
+                }
+              },
+              "depthwise_regularizer": null,
+              "pointwise_regularizer": null,
+              "depthwise_constraint": null,
+              "pointwise_constraint": null
+            },
+            "inbound_nodes": [
+              [
+                [
+                  "stage_6/mid_conv6",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          }
+        ],
+        "input_layers": [
+          [
+            "input_1",
+            0,
+            0
+          ]
+        ],
+        "output_layers": [
+          [
+            "stage_1/stage_heatmap",
+            0,
+            0
+          ],
+          [
+            "stage_2/mid_conv7",
+            0,
+            0
+          ],
+          [
+            "stage_3/mid_conv7",
+            0,
+            0
+          ],
+          [
+            "stage_4/mid_conv7",
+            0,
+            0
+          ],
+          [
+            "stage_5/mid_conv7",
+            0,
+            0
+          ],
+          [
+            "stage_6/mid_conv7",
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "training_config": {
+      "optimizer_config": {
+        "class_name": "RMSprop",
+        "config": {
+          "lr": 0.0010000000474974513,
+          "rho": 0.8999999761581421,
+          "decay": 0.0,
+          "epsilon": 1e-07
+        }
+      },
+      "loss": "categorical_crossentropy",
+      "metrics": [
+        "accuracy"
+      ],
+      "sample_weight_mode": null,
+      "loss_weights": null
+    }
+  },
+  "weightsManifest": [
+    {
+      "paths": [
+        "group1-shard1of3.bin",
+        "group1-shard2of3.bin",
+        "group1-shard3of3.bin"
+      ],
+      "weights": [
+        {
+          "name": "stage_1/conv1/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_1/conv1/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_1/conv1/bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_1/stage_heatmap/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_1/stage_heatmap/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_1/stage_heatmap/bias",
+          "shape": [
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv1/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            150,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv1/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            150,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv1/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv2/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv2/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv2/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv3/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv3/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv3/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv4/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv4/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv4/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv5/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv5/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv5/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv6/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv6/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv6/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv7/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv7/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_2/mid_conv7/bias",
+          "shape": [
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv1/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            150,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv1/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            150,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv1/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv2/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv2/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv2/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv3/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv3/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv3/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv4/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv4/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv4/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv5/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv5/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv5/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv6/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv6/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv6/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv7/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv7/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_3/mid_conv7/bias",
+          "shape": [
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv1/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            150,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv1/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            150,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv1/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv2/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv2/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv2/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv3/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv3/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv3/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv4/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv4/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv4/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv5/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv5/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv5/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv6/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv6/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv6/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv7/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv7/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_4/mid_conv7/bias",
+          "shape": [
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv1/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            150,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv1/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            150,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv1/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv2/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv2/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv2/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv3/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv3/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv3/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv4/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv4/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv4/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv5/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv5/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv5/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv6/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv6/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv6/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv7/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv7/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_5/mid_conv7/bias",
+          "shape": [
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv1/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            150,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv1/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            150,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv1/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv2/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv2/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv2/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv3/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv3/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv3/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv4/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv4/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv4/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv5/depthwise_kernel",
+          "shape": [
+            7,
+            7,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv5/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv5/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv6/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv6/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv6/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv7/depthwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv7/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "stage_6/mid_conv7/bias",
+          "shape": [
+            22
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv1/kernel",
+          "shape": [
+            3,
+            3,
+            3,
+            64
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv1/bias",
+          "shape": [
+            64
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv10/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            512,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv10/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv10/bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv11/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            512,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv11/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv11/bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv12/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            512,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv12/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv12/bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv13/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            512,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv13/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv13/bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv14/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            512,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv14/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv14/bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv2/kernel",
+          "shape": [
+            3,
+            3,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv2/bias",
+          "shape": [
+            64
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv3/kernel",
+          "shape": [
+            3,
+            3,
+            64,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv3/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv4/kernel",
+          "shape": [
+            3,
+            3,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv4/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv5/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            128,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv5/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            128,
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv5/bias",
+          "shape": [
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv6/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            256,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv6/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            256,
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv6/bias",
+          "shape": [
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv7/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            256,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv7/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            256,
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv7/bias",
+          "shape": [
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv8/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            256,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv8/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            256,
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv8/bias",
+          "shape": [
+            256
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv9/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            256,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv9/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            256,
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_conv9/bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_stage_img_feature/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            512,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_stage_img_feature/pointwise_kernel",
+          "shape": [
+            1,
+            1,
+            512,
+            128
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "sub_stages/sub_stage_img_feature/bias",
+          "shape": [
+            128
+          ],
+          "dtype": "float32"
+        }
+      ]
+    }
+  ]
+}
