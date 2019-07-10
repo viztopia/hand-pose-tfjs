@@ -8,8 +8,10 @@ Now working on performance improvement by rebuilding the model with MobileNet. H
 <p align="center">
     <img src="http://giphygifs.s3.amazonaws.com/media/2Yj11FvB4SVYFeglky/giphy.gif", width="480">
 </p>
-
+<br/>
 07/10/2019 Update:
+python code for training the model has been uploaded.
+
 A python model not working very well can be downloaded here:
 [link](https://drive.google.com/open?id=1lH3ePmfRYZ2lVxCnVFYq5vOi4_3XutaW)
 

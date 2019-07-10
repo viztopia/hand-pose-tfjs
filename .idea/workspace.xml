@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39583c68-d4c3-4375-a695-7937487fdaa3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/webcode/images/hand.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webcode/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard10of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard11of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard12of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard13of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard14of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard15of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard16of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard17of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard18of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard19of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard1of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard20of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard21of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard22of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard23of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard24of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard25of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard26of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard27of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard28of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard29of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard2of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard30of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard31of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard32of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard33of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard34of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard35of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard36of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard3of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard4of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard5of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard6of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard7of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard8of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/group1-shard9of36.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.json" beforeDir="false" afterPath="$PROJECT_DIR$/webcode/model/model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/webcode/sketch.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,7 +16,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webcode/index.html">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
               <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
@@ -66,9 +25,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webcode/sketch.js">
+        <entry file="file://$PROJECT_DIR$/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
+            <state relative-caret-position="-646">
               <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
             </state>
           </provider>
@@ -78,8 +37,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="285">
-                <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+              <first_editor relative-caret-position="323">
+                <caret line="17" column="63" lean-forward="true" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
               </first_editor>
               <second_editor />
             </state>
@@ -89,9 +48,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pythoncode/demo_cpm_hand_dw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8724">
+            <state relative-caret-position="532">
               <caret line="28" column="80" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pythoncode/models/nets/cpm_hand_slim_dw.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3784" />
           </provider>
         </entry>
       </file>
@@ -168,19 +134,7 @@
             <path>
               <item name="hand-pose-tfjs" type="b2602c69:ProjectViewProjectNode" />
               <item name="hand-pose-tfjs" type="462c0819:PsiDirectoryNode" />
-              <item name="pythoncode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hand-pose-tfjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hand-pose-tfjs" type="462c0819:PsiDirectoryNode" />
-              <item name="pythoncode" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hand-pose-tfjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hand-pose-tfjs" type="462c0819:PsiDirectoryNode" />
-              <item name="pythoncode" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hand-pose-tfjs" type="b2602c69:ProjectViewProjectNode" />
@@ -206,8 +160,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\YG\Desktop\NYU\MachineLearning\hand-pose-tfjs\webcode" />
       <recent name="C:\Users\YG\Desktop\NYU\MachineLearning\hand-pose-tfjs" />
+      <recent name="C:\Users\YG\Desktop\NYU\MachineLearning\hand-pose-tfjs\webcode" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -236,12 +190,12 @@
       <workItem from="1560805800366" duration="2576000" />
       <workItem from="1560955556244" duration="725000" />
       <workItem from="1561857875735" duration="2268000" />
-      <workItem from="1562786691584" duration="1193000" />
+      <workItem from="1562786691584" duration="2172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37756000" />
+    <option name="totallyTimeSpent" value="38735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -271,21 +225,14 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
-    <entry file="file://$PROJECT_DIR$/webcode/model/model.json">
+    <entry file="file://$PROJECT_DIR$/model/model.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="3951" column="12" selection-start-line="3951" selection-start-column="12" selection-end-line="3951" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webcode/sketch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webcode/index.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
@@ -294,16 +241,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pythoncode/demo_cpm_hand_dw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8724">
+        <state relative-caret-position="532">
           <caret line="28" column="80" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pythoncode/models/nets/cpm_hand_slim_dw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3784" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sketch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="285">
-            <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+          <first_editor relative-caret-position="323">
+            <caret line="17" column="63" lean-forward="true" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
           </first_editor>
           <second_editor />
         </state>
