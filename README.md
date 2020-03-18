@@ -28,5 +28,5 @@ Put it under models/ , and run demo_cpm_hand_dw.py for testing.
 
 now updated to using [tfjs handpose](https://github.com/tensorflow/tfjs-models/tree/master/handpose) with [ml5.js](https://github.com/ml5js/ml5-library)
 <p align="center">
-    <img srchttps://media.giphy.com/media/TLPWLBVA20rOX3UR16/giphy.gif", width="480">
+    <img src="https://media.giphy.com/media/TLPWLBVA20rOX3UR16/giphy.gif", width="480">
 </p>
