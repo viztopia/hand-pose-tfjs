@@ -1,237 +1,109 @@
-let model;
-let imageToTrack;
-let button;
-let handX = [];
-let handY = [];
+// Copyright (c) 2019 ml5
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
 
-const IMAGE_SIZE = 368;
-const jointNumber = 21;
+/* ===
+ml5 Example
+Handpose example using p5.js
+=== */
 
-loadModel();
-
-function preload() {
-    // imageToTrack = createImg("images/hand.jpg");
-    // imageToTrack.hide();
-}
+let video;
+let hp;
+let poses = [];
 
 function setup() {
-    createCanvas(600, 400);
-    button = createButton('track hand');
-    button.mousePressed(startTracking);
-    imageToTrack = createCapture(VIDEO);
-    imageToTrack.size(500, 400);
-    imageToTrack.hide();
+  createCanvas(640, 480);
+  video = createCapture(VIDEO);
+  video.size(width, height);
 
+  // Create a new poseNet method with a single detection
+  hp = ml5.handPose(video, modelReady);
+  // This sets up an event that fills the global variable "poses"
+  // with an array every time new poses are detected
+
+  hp.on('pose', function(results) {
+    poses = results;
+    // console.log(poses)
+  });
+  // Hide the video element, and just show the canvas
+  video.hide();
+}
+
+function modelReady() {
+  select('#status').html('Model Loaded');
+  hp.singlePose();
 }
 
 function draw() {
-    background(255);
-    image(imageToTrack, 0, 0);
+  image(video, 0, 0, width, height);
 
+  // We can call both functions to draw all keypoints and the skeletons
+  drawKeypoints();
+  drawSkeleton();
 
-    if (handX.length > 0 && handY.length > 0) {
-        // console.log(handX.length);
-        for (let i = 0; i < handX.length; i++) {
-            noStroke();
-            fill(232, 122, 19);
-            ellipse(handX[i], handY[i], 10);
-            stroke(255, 170, 32);
-            text(i, handX[i] + 15, handY[i])
-        }
+}
+
+// A function to draw ellipses over the detected keypoints
+function drawKeypoints()  {
+  // Loop through all the poses detected
+  for (let i = 0; i < poses.length; i++) {
+    // For each pose detected, loop through all the keypoints
+    // let pose = poses[i].pose;
+    // for (let j = 0; j < pose.keypoints.length; j++) {
+    //   // A keypoint is an object describing a body part (like rightArm or leftShoulder)
+    //   let keypoint = pose.keypoints[j];
+    //   // Only draw an ellipse is the pose probability is bigger than 0.2
+    //   if (keypoint.score > 0.2) {
+    //     fill(255, 0, 0);
+    //     noStroke();
+    //     ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+    //   }
+    // }
+    let pose = poses[i];
+    // console.log(pose)
+    for (let j = 0; j < pose.landmarks.length; j++) {
+      // A keypoint is an object describing a body part (like rightArm or leftShoulder)
+      let keypoint = pose.landmarks[j];
+      // Only draw an ellipse is the pose probability is bigger than 0.2
+      // if (keypoint.score > 0.2) {
+        fill(255, 0, 0);
+        noStroke();
+        ellipse(keypoint[0], keypoint[1], 10, 10);
+      // }
+    }
+  }
+}
+
+// A function to draw the skeletons
+function drawSkeleton() {
+  // Loop through all the skeletons detected
+  for (let i = 0; i < poses.length; i++) {
+    let annotations = poses[i].annotations;
+    // For every skeleton, loop through all body connections
+    stroke(255, 0, 0);
+    for (let j = 0; j < annotations.thumb.length - 1; j++) {
+      // let partA = annotations.thumb[j][0];
+      // let partB = annotations.thumb[j][1];
+      line(annotations.thumb[j][0], annotations.thumb[j][1], annotations.thumb[j + 1][0], annotations.thumb[j + 1][1]);
+    }
+    for (let j = 0; j < annotations.indexFinger.length - 1; j++) {
+      line(annotations.indexFinger[j][0], annotations.indexFinger[j][1], annotations.indexFinger[j + 1][0], annotations.indexFinger[j + 1][1]);
+    }
+    for (let j = 0; j < annotations.middleFinger.length - 1; j++) {
+      line(annotations.middleFinger[j][0], annotations.middleFinger[j][1], annotations.middleFinger[j + 1][0], annotations.middleFinger[j + 1][1]);
+    }
+    for (let j = 0; j < annotations.ringFinger.length - 1; j++) {
+      line(annotations.ringFinger[j][0], annotations.ringFinger[j][1], annotations.ringFinger[j + 1][0], annotations.ringFinger[j + 1][1]);
+    }
+    for (let j = 0; j < annotations.pinky.length - 1; j++) {
+      line(annotations.pinky[j][0], annotations.pinky[j][1], annotations.pinky[j + 1][0], annotations.pinky[j + 1][1]);
     }
 
-    if (handX.length == 21 && handY.length == 21) {
-        stroke(255, 170, 32);
-        strokeWeight(1);
-
-        // console.log(handX.length);
-        for (let i = 0; i < 4; i++) {
-            line(handX[i], handY[i], handX[i + 1], handY[i + 1]);
-        }
-
-        line(handX[0], handY[0], handX[5], handY[5]);
-
-        for (let i = 5; i < 8; i++) {
-            line(handX[i], handY[i], handX[i + 1], handY[i + 1]);
-        }
-
-        line(handX[0], handY[0], handX[9], handY[9]);
-
-        for (let i = 9; i < 12; i++) {
-            line(handX[i], handY[i], handX[i + 1], handY[i + 1]);
-        }
-
-        line(handX[0], handY[0], handX[13], handY[13]);
-
-        for (let i = 13; i < 16; i++) {
-            line(handX[i], handY[i], handX[i + 1], handY[i + 1]);
-        }
-
-        line(handX[0], handY[0], handX[17], handY[17]);
-
-        for (let i = 17; i < 20; i++) {
-            line(handX[i], handY[i], handX[i + 1], handY[i + 1]);
-        }
-    }
-
-
-}
-
-async function loadModel() {
-    model = await tf.loadLayersModel('model/model.json');
-    model.summary();
-}
-
-function startTracking() {
-    trackHand(imageToTrack);
-}
-
-async function trackHand(imageToTrack) {
-
-    await tf.nextFrame();
-
-    // console.log("------------instance of video? --------------")
-    // console.log(imageToTrack.elt instanceof HTMLVideoElement);
-    //
-    // console.log("------------video ready? --------------")
-    // console.log(imageToTrack.elt.readyState);
-    if (typeof imageToTrack === 'object' && imageToTrack.elt instanceof HTMLVideoElement) {
-
-        // console.log("=====================video!!!!!!!!!====================")
-        const video = imageToTrack.elt;
-
-        // Wait for the video to be ready
-        if (video && video.readyState === 0) {
-            await new Promise(resolve => {
-                video.onloadeddata = () => resolve();
-            });
-        }
-
-        await tf.nextFrame();
-        const result = tf.tidy(() => {
-            const imageResize = [IMAGE_SIZE, IMAGE_SIZE];
-            const processedImg = imgToTensor(video, imageResize);
-            // console.log(model);
-            const predictions = model.predict(processedImg);
-            // console.log(predictions)
-            return predictions;
-        });
-        // console.log(result);
-
-        const lastHeatMap = result[result.length - 1].squeeze();
-        // console.log("lastHeatMap:");
-        // console.log(lastHeatMap);
-
-        for (let currnetJoint = 0; currnetJoint < jointNumber; currnetJoint++) {
-            // console.log("heat map shape:");
-            // console.log(lastHeatMap.shape);
-            const joint1_HM_3d = lastHeatMap.slice([0, 0, 0 + currnetJoint], [46, 46, 1]).clone();
-            // console.log("joint1_3d:");
-            // console.log(joint1_HM_3d);
-
-            const joint1_HM_2d = joint1_HM_3d.reshape([46, 46]);
-            // console.log("joint1_2d:");
-            // console.log(joint1_HM_2d);
-
-            joint1_HM_2d.array().then((array) => {
-                // console.log("joint heat map array");
-                // console.log(array);
-                let array_flat = array.flat();
-                let indexOfMaxValue = array_flat.indexOf(Math.max(...array_flat));
-                // console.log("max value & index:");
-                // console.log(Math.max(...array_flat))
-                // console.log(indexOfMaxValue);
-                let cordY = Math.floor(indexOfMaxValue / 46);
-                let cordX = indexOfMaxValue % 46;
-                // console.log("X: " + cordX + " Y: " + cordY);
-                let scaleUnitX = video.width / 46;
-                let scaleUnitY = video.height / 46;
-                handX[currnetJoint] = scaleUnitX * cordX;
-                handY[currnetJoint] = scaleUnitY * cordY;
-            })
-
-            joint1_HM_3d.dispose();
-            joint1_HM_2d.dispose();
-        }
-
-        // result.dispose();
-        lastHeatMap.dispose();
-
-
-        trackHand(imageToTrack);
-
-
-    } else if (imageToTrack) {
-        await tf.nextFrame();
-        const result = tf.tidy(() => {
-            const imageResize = [IMAGE_SIZE, IMAGE_SIZE];
-            const processedImg = imgToTensor(imageToTrack.elt, imageResize);
-            // console.log(model);
-            const predictions = model.predict(processedImg);
-            // console.log(predictions)
-            return predictions;
-        });
-        // console.log(result);
-
-        const lastHeatMap = result[result.length - 1].squeeze();
-        // console.log("lastHeatMap:");
-        // console.log(lastHeatMap);
-
-        for (let currnetJoint = 0; currnetJoint < jointNumber; currnetJoint++) {
-            console.log("heat map shape:");
-            console.log(lastHeatMap.shape);
-            let joint1_HM_3d = lastHeatMap.slice([0, 0, 0 + currnetJoint], [46, 46, 1]).clone();
-            console.log("joint1_3d:");
-            console.log(joint1_HM_3d);
-
-            let joint1_HM_2d = joint1_HM_3d.reshape([46, 46]);
-            console.log("joint1_2d:");
-            console.log(joint1_HM_2d);
-
-            joint1_HM_2d.array().then((array) => {
-                console.log("joint heat map array");
-                console.log(array);
-                let array_flat = array.flat();
-                let indexOfMaxValue = array_flat.indexOf(Math.max(...array_flat));
-                console.log("max value & index:");
-                console.log(Math.max(...array_flat))
-                console.log(indexOfMaxValue);
-                let cordY = Math.floor(indexOfMaxValue / 46);
-                let cordX = indexOfMaxValue % 46;
-                console.log("X: " + cordX + " Y: " + cordY);
-                let scaleUnitX = imageToTrack.width / 46;
-                let scaleUnitY = imageToTrack.height / 46;
-                handX[currnetJoint] = scaleUnitX * cordX;
-                handY[currnetJoint] = scaleUnitY * cordY;
-            })
-        }
-    }
-}
-
-// Static Method: crop the image
-const cropImage = (img) => {
-    const size = Math.min(img.shape[0], img.shape[1]);
-    const centerHeight = img.shape[0] / 2;
-    const beginHeight = centerHeight - (size / 2);
-    const centerWidth = img.shape[1] / 2;
-    const beginWidth = centerWidth - (size / 2);
-    return img.slice([beginHeight, beginWidth, 0], [size, size, 3]);
-};
-
-function imgToTensor(input, size = null) {
-    return tf.tidy(() => {
-        let img = tf.browser.fromPixels(input);
-
-        if (size) {
-            img = tf.image.resizeBilinear(img, size);
-        }
-        // console.log(img)
-        const croppedImage = cropImage(img);
-        const batchedImage = croppedImage.expandDims(0);
-        return batchedImage.toFloat().div(tf.scalar(127)).sub(tf.scalar(1));
-    });
-}
-
-function visualizeResult() {
-
+    line(annotations.palmBase[0][0], annotations.palmBase[0][1], annotations.thumb[0][0], annotations.thumb[0][1]);
+    line(annotations.palmBase[0][0], annotations.palmBase[0][1], annotations.indexFinger[0][0], annotations.indexFinger[0][1]);
+    line(annotations.palmBase[0][0], annotations.palmBase[0][1], annotations.middleFinger[0][0], annotations.middleFinger[0][1]);
+    line(annotations.palmBase[0][0], annotations.palmBase[0][1], annotations.ringFinger[0][0], annotations.ringFinger[0][1]);
+    line(annotations.palmBase[0][0], annotations.palmBase[0][1], annotations.pinky[0][0], annotations.pinky[0][1]);
+  }
 }
