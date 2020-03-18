@@ -20,3 +20,13 @@ A python model not working very well can be downloaded here:
 [link](https://drive.google.com/open?id=1lH3ePmfRYZ2lVxCnVFYq5vOi4_3XutaW)
 
 Put it under models/ , and run demo_cpm_hand_dw.py for testing.
+
+
+================================
+
+03/17/2020 Update:
+
+now updated to using [tfjs handpose](https://github.com/tensorflow/tfjs-models/tree/master/handpose) with [ml5.js](https://github.com/ml5js/ml5-library)
+<p align="center">
+    <img srchttps://media.giphy.com/media/TLPWLBVA20rOX3UR16/giphy.gif", width="480">
+</p>
